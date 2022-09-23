@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/models/category.dart';
-import '../dummy_data.dart';
-import '../widgets/categories_item.dart';
-import '../widgets/add_categories_dialog.dart';
+import 'package:meal_app/data/models/category.dart';
+import '../../data/dummy_data.dart';
+import '../../widgets/categories_item.dart';
+import '../../widgets/add_categories_dialog.dart';
 
 class CategoriesScreen extends StatefulWidget {
   static const String routeName = '/categories-screens';

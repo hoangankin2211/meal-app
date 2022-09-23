@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../screens/filters-screen.dart';
+import '../presentation/filter/filters-screen.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/meal.dart';
-import '../widgets/meal_item.dart';
+import '../../data/models/meal.dart';
+import '../../widgets/meal_item.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({Key? key, required this.favoriteMeals})
