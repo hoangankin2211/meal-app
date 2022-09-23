@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/models/category.dart';
+import 'package:meal_app/data/models/category.dart';
 
 class AddCategoriesDialog extends StatefulWidget {
   final Function(Category) addCategory;

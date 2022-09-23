@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:meal_app/data/dummy_data.dart';
+import 'package:meal_app/theme/app_themes.dart';
 import 'presentation/category/categories_screen.dart';
 import 'presentation/category/categories_meal_screen.dart';
 import 'presentation/meal_item/meal_item_detail_screen.dart';
 import 'presentation/tab/tabs_screen.dart';
 import 'presentation/filter/filters-screen.dart';
 import 'data/models/meal.dart';
+import 'package:get/get.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(const MyApp());
 }
 
@@ -54,38 +61,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Meal App',
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: Colors.orange[300],
-        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
-        fontFamily: 'Raleway',
-        textTheme: const TextTheme(
-          headline1: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 30,
-            fontWeight: FontWeight.normal,
-          ),
-          headline2: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 20,
-            fontWeight: FontWeight.normal,
-          ),
-          headline3: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 12.5,
-            fontWeight: FontWeight.w600,
-          ),
-          caption: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 30,
-            fontWeight: FontWeight.w600,
-            color: Colors.red,
-          ),
-        ),
-      ),
-      // home: const CategoriesScreen(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Meal Planner',
+      theme: AppThemes.lightTheme,
       initialRoute: '/',
       routes: {
         '/': (context) => TabsScreen(favoriteMeals: favoriteMeals),
